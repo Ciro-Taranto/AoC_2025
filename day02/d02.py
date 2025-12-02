@@ -21,7 +21,9 @@ def check_valid(pair: str) -> list[int]:
 
 def check_valid_p2_bf(pair: str) -> list[int]:
     """
-    Brute forcing it, but I am sure one does not actually need to check all the numbers
+    Brute forcing it, but I am sure one does not actually need to check all the numbers.
+    This could be done the other way round. Checking for each possible number of digits,
+    and creating only the valid combinations with 1, 2, ... n digits.
     """
     valid = set()
     low, high = pair.split("-")
