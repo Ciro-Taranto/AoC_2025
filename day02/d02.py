@@ -80,20 +80,20 @@ if __name__ == "__main__":
     valid_part_2 = set()
     vp2 = set()
     start = perf_counter()
-    for i, pair in enumerate(input_.split(",")):
-        valid.extend(check_valid(pair))
-    print(f"Elapsed {perf_counter() - start:2.4f} seconds")
+    # for i, pair in enumerate(input_.split(",")):
+    #     valid.extend(check_valid(pair))
+    # print(f"Elapsed {perf_counter() - start:2.4f} seconds")
+    # start = perf_counter()
+    # for i, pair in enumerate(input_.split(",")):
+    #     valid_part_2 = valid_part_2.union(set(check_valid_p2_bf(pair)))
+    # print(f"Elapsed {perf_counter() - start:2.4f} seconds")
     start = perf_counter()
-    for i, pair in enumerate(input_.split(",")):
-        valid_part_2 = valid_part_2.union(set(check_valid_p2_bf(pair)))
-    print(f"Elapsed {perf_counter() - start:2.4f} seconds")
-    start = perf_counter()
-    for i, pair in enumerate(input_.split(",")):
+    for pair in input_.split(","):
         v1, v2 = pair.split("-")
         v1, v2 = int(v1), int(v2)
         vp2 = vp2.union(check_valid_p2(v1, v2))
     print(f"Elapsed {perf_counter() - start:2.4f} seconds")
 
-    print(sum(valid))
-    print(sum(valid_part_2))
+    # print(sum(valid))
+    # print(sum(valid_part_2))
     print(sum(vp2))
