@@ -63,11 +63,9 @@ class PolyTiles:
         positions: list[int],
         perpendicular_lines: dict[int, list[tuple[int, int]]],
     ) -> bool:
-        start_idx = bisect_left(positions, start)
-        end_idx = bisect_right(positions, end)
+        start_idx = bisect_right(positions, start)
+        end_idx = bisect_left(positions, end)
         for position in positions[start_idx:end_idx]:
-            if position in {start, end}:
-                continue
             for s, e in perpendicular_lines[position]:
                 if s < c < e:
                     return True
